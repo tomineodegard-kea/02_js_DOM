@@ -10,9 +10,10 @@ article {
   column-gap: 10px;
 }
 
-.articel1,
-.articel2 {
+.article1,
+.article2 {
   border: solid black 1px;
+  padding: 10px;
 }
 
 h1 {

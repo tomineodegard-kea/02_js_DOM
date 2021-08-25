@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02_01_select</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Titel</h1>
+    </header>
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article id="billeder">
+          <div class="article1">
+            <img src="https://placeimg.com/640/480/any" alt="" />
+            <h3>Article 1</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Praesentium facere ullam earum eligendi, illum dolores officia
+              adipisci aspernatur aliquam nemo minima. Molestias error nihil in
+              possimus praesentium consectetur aspernatur. Quibusdam!
+            </p>
+          </div>
+
+          <div class="article2">
+            <img src="https://placeimg.com/640/480/any" alt="" />
+            <h3>Article 2</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Praesentium facere ullam earum eligendi, illum dolores officia
+              adipisci aspernatur aliquam nemo minima. Molestias error nihil in
+              possimus praesentium consectetur aspernatur. Quibusdam!
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>Dette er en footer</footer>
+
+    <script>
+      let newSection = document.querySelector("section");
+      //   new article element
+      let newArticle = document.createElement("article");
+      //   new h3-element
+      let overskrift = document.createElement("h3");
+      //   creating the text for the new article element
+      let overskriftTxt = document.createTextNode(
+        "This is the h3 for the new article-element made with createTextNode and appendChild"
+      );
+
+      // implement the new h3-text
+      overskrift.appendChild(overskriftTxt);
+      // add the "overskrift"(the variable we made) to the new article
+      newArticle.appendChild(overskrift);
+
+      // by using appendChild I can add a new article, you can see this in the conosol.
+      // add the new article to the new section
+      newSection.appendChild(newArticle);
+    </script>
+  </body>
+</html>
