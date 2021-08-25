@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06_skiftBillede</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Titel</h1>
+    </header>
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article id="billeder">
+          <div class="article1">
+            <img src="https://placeimg.com/640/480/any" alt="" />
+            <h3>Article 1</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Praesentium facere ullam earum eligendi, illum dolores officia
+              adipisci aspernatur aliquam nemo minima. Molestias error nihil in
+              possimus praesentium consectetur aspernatur. Quibusdam!
+            </p>
+          </div>
+
+          <div class="article2">
+            <img src="https://placeimg.com/640/480/any" alt="" />
+            <h3>Article 2</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Praesentium facere ullam earum eligendi, illum dolores officia
+              adipisci aspernatur aliquam nemo minima. Molestias error nihil in
+              possimus praesentium consectetur aspernatur. Quibusdam!
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>Dette er en footer</footer>
+
+    <script>
+      let image1 = document.querySelector("article:nth-child(1) img");
+
+      image1.addEventListener("click", newImage);
+
+      function newImage() {
+        image1.src = "https://placeimg.com/640/480/arch?t=" + randomNumber();
+      }
+
+      function randomNumber() {
+        return Math.floor(Math.random() * 10);
+      }
+    </script>
+  </body>
+</html>
