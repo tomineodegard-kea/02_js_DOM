@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05_showAllAnimals</title>
+  </head>
+  <body>
+    <section class="data_container"></section>
+    <template>
+      <article class="teachers">
+        <h3></h3>
+        <p class="email"></p>
+        <p class="github"></p>
+      </article>
+    </template>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", display);
+
+      let teachers = [
+        {
+          name: "Alan Engelhart",
+          email: "ale@kea.dk",
+          github: "alan-engelhardt",
+        },
+        {
+          name: "Martin Bregnhøi",
+          email: "mabe@kea.dk",
+          github: "martinbregnhoi",
+        },
+
+        {
+          name: "Peter Ulf",
+          email: "peuj@kea.dk",
+          github: "PeterUlf",
+        },
+
+        {
+          name: "Klaus Mandal",
+          email: "klmh@kea.dk",
+          github: "MondaleMondale",
+        },
+      ];
+
+      function display() {
+        const container = document.querySelector(".data_container");
+        const teachersTemplate = document.querySelector("template");
+        teachers.forEach((teacher) => {
+          let clone = teachersTemplate.cloneNode(true).content;
+          clone.querySelector("h3").textContent = teacher.name;
+          clone.querySelector(".email").textContent = teacher.email;
+          clone.querySelector(".github").textContent = teacher.github;
+          container.appendChild(clone);
+        });
+      }
+    </script>
+  </body>
+</html>
