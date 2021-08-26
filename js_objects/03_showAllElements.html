@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01_object</title>
+  </head>
+  <body>
+    <article id="animal">
+      <h3></h3>
+      <p>Family:</p>
+      <p>Natural habitat:</p>
+      <img src="" alt="" />
+    </article>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", (article) => {
+        console.log("DOM fully loaded and parsed");
+      });
+
+      const animal = {
+        name: "Tiger",
+        family: "Cats",
+        picture: "https://placeimg.com/640/480/animals",
+        habitat: "Jungle",
+      };
+
+      const destination = document.querySelector("#animal");
+
+      destination.querySelector("p:nth-child(2)").textContent = animal.family;
+      destination.querySelector("p:nth-child(3)").textContent = animal.habitat;
+      destination.querySelector("img").src = animal.picture;
+
+      console.log(destination.querySelector("article p"));
+    </script>
+  </body>
+</html>
