@@ -14,10 +14,6 @@
     </article>
 
     <script>
-      window.addEventListener("DOMContentLoaded", (article) => {
-        console.log("DOM fully loaded and parsed");
-      });
-
       const animal = {
         name: "Tiger",
         family: "Cats",
@@ -26,10 +22,28 @@
       };
 
       const destination = document.querySelector("#animal");
-      const animalProperties = `Name of animal:${animal.name}, family:${animal.family}, picture:${animal.picture}, natural habitat of this animal:${animal.habitat}`;
 
-      destination.querySelector("p").textContent = animalProperties;
-      destination.querySelector("img").src = animal.picture;
+      document.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        console.log("testStart");
+        destination.querySelector("p").textContent = "Dyr: " + animal.name;
+        destination.querySelector("p").textContent +=
+          ". Family: " + animal.family;
+        destination.querySelector("p").textContent +=
+          ". Natural habitat:  " + animal.habitat;
+        destination.querySelector("img").src = animal.picture;
+      }
+
+      // MY EXPERIMENTAL SOLUTION, THAT ALSO WORKS THO...
+      // const animalProperties = `Name of animal:${animal.name}, family:${animal.family}, picture:${animal.picture}, natural habitat of this animal:${animal.habitat}`;
+
+      // window.addEventListener("DOMContentLoaded", (article) => {
+      //   console.log("DOM fully loaded and parsed");
+      // });
+
+      // destination.querySelector("p").textContent = animalProperties;
+      // destination.querySelector("img").src = animal.picture;
     </script>
   </body>
 </html>
