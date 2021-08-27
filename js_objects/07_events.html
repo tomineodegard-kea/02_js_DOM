@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05_showAllAnimals</title>
+    <style>
+      section .data_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    </style>
+  </head>
+  <body>
+    <section class="data_container"></section>
+    <template>
+      <article class="grid_movies">
+        <h3></h3>
+        <p class="year"></p>
+        <p class="country"></p>
+        <p class="duration"></p>
+        <p class="creator"></p>
+        <img class="picture" src="" alt="" />
+      </article>
+    </template>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", display);
+
+      let movies = [
+        {
+          name: "A Calling",
+          year: "2019",
+          country: "Denmark",
+          duration: "20 min",
+          creator: "Christian Bengston",
+          picture:
+            "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/W6dOqabNhHKBPXxxKKEZRA84-720.jpg",
+        },
+        {
+          name: "A Hole In My Hart",
+          year: "2015",
+          country: "Holland",
+          duration: "9 min",
+          creator: "Mees Peijnebug",
+          picture:
+            "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Q8K1pZrOs03Q0IrDkBwGVu5r-360.jpg",
+        },
+
+        {
+          name: "A Place In The Sun - 110 years in the genocide",
+          year: "2018",
+          country: "Germany",
+          duration: "20 min",
+          creator: "Christian Zipfel",
+          picture:
+            "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck.jpg 2560w,https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck-360.jpg 360w,https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck-720.jpg 720w,https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck-1280.jpg 1280w,https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck-1920.jpg 1920w",
+        },
+
+        {
+          name: "A Summer Place",
+          year: "2021",
+          country: "France",
+          duration: "21 min",
+          creator: "Alexandra Metheou",
+          picture:
+            "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/9ZXEAY471UE4gFwHMXeRb17p.jpg",
+        },
+        {
+          name: "A Tower of Two",
+          year: "2019",
+          country: "Denmark",
+          duration: "21 min",
+          creator: "Jacob Krzysztof Glogowski",
+          picture:
+            "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Zdt2ODEqSVOkNe8nUaSSu8kd.jpg",
+        },
+      ];
+
+      function display() {
+        const container = document.querySelector(".data_container");
+        const moviesTemplate = document.querySelector("template");
+        movies.forEach((movie) => {
+          let clone = moviesTemplate.cloneNode(true).content;
+          clone.querySelector("h3").textContent = movie.name;
+          clone.querySelector(".year").textContent = movie.year;
+          clone.querySelector(".country").textContent = movie.country;
+          clone.querySelector(".duration").textContent = movie.duration;
+          clone.querySelector(".creator").textContent = movie.creator;
+          clone.querySelector(".picture").scr = movie.picture;
+          c;
+
+          container.appendChild(clone);
+        });
+      }
+    </script>
+  </body>
+</html>
